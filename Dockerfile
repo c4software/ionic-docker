@@ -4,7 +4,7 @@ MAINTAINER marco [dot] turi [at] hotmail [dot] it
 ENV DEBIAN_FRONTEND=noninteractive \
     ANDROID_HOME=/opt/android-sdk-linux \
     NPM_VERSION=4.4.4 \
-    IONIC_VERSION=3.7.0 \
+    IONIC_VERSION=3.8.1 \
     CORDOVA_VERSION=7.0.1 \
     YARN_VERSION=0.24.6 \
     # Fix for the issue with Selenium, as described here:
