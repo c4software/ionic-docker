@@ -1,5 +1,5 @@
 FROM debian:jessie
-MAINTAINER marco [dot] turi [at] hotmail [dot] it
+MAINTAINER c4software [at] gmail [dot] com
 
 ENV DEBIAN_FRONTEND=noninteractive \
     ANDROID_HOME=/opt/android-sdk-linux \
@@ -13,7 +13,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 
 # Install basics
 RUN apt-get update &&  \
-    apt-get install -y git wget curl unzip ruby build-essential && \
+    apt-get install -y git wget curl unzip ruby ruby-dev build-essential && \
     curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
     apt-get update &&  \
     apt-get install -y nodejs && \
