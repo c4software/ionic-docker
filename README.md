@@ -1,7 +1,9 @@
-[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://tldrlegal.com/license/mit-license#summary) [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/marcoturi/ionic) [![](https://images.microbadger.com/badges/image/marcoturi/ionic.svg)](https://microbadger.com/images/marcoturi/ionic "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/marcoturi/ionic.svg)](https://microbadger.com/images/marcoturi/ionic "Get your own version badge on microbadger.com")
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://tldrlegal.com/license/mit-license#summary) [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/c4software/ionic) [![](https://images.microbadger.com/badges/image/c4software/ionic.svg)](https://microbadger.com/images/c4software/ionic "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/c4software/ionic.svg)](https://microbadger.com/images/c4software/ionic "Get your own version badge on microbadger.com")
 
 # Ionic-docker
 A ionic 1/2 image to be used with Gitlab CI
+
+ℹ️ This fork is just the updated version of marcoturi version (Latest npm, ruby, cordova, ionic version)
 
 ### Inspired by:
 - https://github.com/procoders/ionic-docker
@@ -23,25 +25,25 @@ A ionic 1/2 image to be used with Gitlab CI
 ##Usage
 
 ```
-docker run -ti --rm -p 8100:8100 -p 35729:35729 marcoturi/ionic
+docker run -ti --rm -p 8100:8100 -p 35729:35729 c4software/ionic
 ```
 If you have your own ionic sources, you can launch it with:
 
 ```
-docker run -ti --rm -p 8100:8100 -p 35729:35729 -v /path/to/your/ionic-project/:/myApp:rw marcoturi/ionic
+docker run -ti --rm -p 8100:8100 -p 35729:35729 -v /path/to/your/ionic-project/:/myApp:rw c4software/ionic
 ```
 
 ### Automation
 With this alias:
 
 ```
-alias ionic="docker run -ti --rm -p 8100:8100 -p 35729:35729 --privileged -v /dev/bus/usb:/dev/bus/usb -v ~/.gradle:/root/.gradle -v \$PWD:/myApp:rw marcoturi/ionic ionic"
+alias ionic="docker run -ti --rm -p 8100:8100 -p 35729:35729 --privileged -v /dev/bus/usb:/dev/bus/usb -v ~/.gradle:/root/.gradle -v \$PWD:/myApp:rw c4software/ionic ionic"
 ```
 
 > Due to a bug in ionic, if you want to use ionic serve, you have to use --net host option :
 
 ```
-alias ionic="docker run -ti --rm --net host --privileged -v /dev/bus/usb:/dev/bus/usb -v ~/.gradle:/root/.gradle -v \$PWD:/myApp:rw marcoturi/ionic ionic"
+alias ionic="docker run -ti --rm --net host --privileged -v /dev/bus/usb:/dev/bus/usb -v ~/.gradle:/root/.gradle -v \$PWD:/myApp:rw c4software/ionic ionic"
 ```
 
 > Know you need gradle for android, I suggest to mount ~/.gradle into /root/.gradle to avoid downloading the whole planet again and again
@@ -68,6 +70,6 @@ ionic cordova run android
 
 ### FAQ
 * The application is not installed on my android device
-    * Try `docker run -ti --rm -p 8100:8100 -p 35729:35729 --privileged -v /dev/bus/usb:/dev/bus/usb -v \$PWD:/myApp:rw marcoturi/ionic adb devices` your device should appear
+    * Try `docker run -ti --rm -p 8100:8100 -p 35729:35729 --privileged -v /dev/bus/usb:/dev/bus/usb -v \$PWD:/myApp:rw c4software/ionic adb devices` your device should appear
 * The adb devices show nothing whereas I can see it when I do `adb devices` on my computer
     * You can't have adb inside and outside docker at the same time, be sure to `adb kill-server` on your computer before using this image
