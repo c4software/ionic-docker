@@ -1,4 +1,4 @@
-[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://tldrlegal.com/license/mit-license#summary) [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/c4software/ionic) [![](https://images.microbadger.com/badges/image/c4software/ionic.svg)](https://microbadger.com/images/c4software/ionic "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/c4software/ionic.svg)](https://microbadger.com/images/c4software/ionic "Get your own version badge on microbadger.com")
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://tldrlegal.com/license/mit-license#summary) [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/c4software/ionic)
 
 # Ionic-docker
 A ionic 1/2 image to be used with Gitlab CI
