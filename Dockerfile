@@ -4,8 +4,8 @@ MAINTAINER c4software [at] gmail [dot] com
 ENV DEBIAN_FRONTEND=noninteractive \
     ANDROID_HOME=/opt/android-sdk-linux \
     NPM_VERSION=4.4.4 \
-    IONIC_VERSION=3.8.1 \
-    CORDOVA_VERSION=7.0.1 \
+    IONIC_VERSION=3.13.2 \
+    CORDOVA_VERSION=7.1.0 \
     YARN_VERSION=0.24.6 \
     # Fix for the issue with Selenium, as described here:
     # https://github.com/SeleniumHQ/docker-selenium/issues/87
