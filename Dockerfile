@@ -54,6 +54,18 @@ ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 RUN yes Y | ${ANDROID_HOME}/tools/bin/sdkmanager --licenses
 RUN cordova telemetry off
 
+RUN ${ANDROID_HOME}/tools/bin/sdkmanager "platform-tools"
+
+# Gradle PPA
+RUN apt-get update \
+ && apt-get -y install gradle \
+ && gradle -v
+
+# Install Maven 3 from PPA
+
+RUN apt-get -y install maven \
+ && mvn --version
+
 WORKDIR Sources
 EXPOSE 8100 35729
 CMD ["ionic", "serve"]
