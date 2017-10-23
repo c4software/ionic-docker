@@ -56,15 +56,12 @@ RUN cordova telemetry off
 
 RUN ${ANDROID_HOME}/tools/bin/sdkmanager "platform-tools"
 
-# Gradle PPA
-RUN apt-get update \
- && apt-get -y install gradle \
- && gradle -v
-
-# Install Maven 3 from PPA
-
-RUN apt-get -y install maven \
- && mvn --version
+# Installation de Graddle
+RUN wget https://services.gradle.org/distributions/gradle-4.1-bin.zip && \
+    mkdir /opt/gradle && \
+    unzip -d /opt/gradle gradle-4.1-bin.zip && \
+    ln -s /opt/gradle/gradle-4.1/bin/gradle /usr/bin/gradle && \
+    rm gradle-4.1-bin.zip
 
 WORKDIR Sources
 EXPOSE 8100 35729
